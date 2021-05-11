@@ -1,6 +1,6 @@
 import { Page } from "@shopify/polaris";
-import {ResourcePicker} from '@shopify/app-bridge-react';
-import React ,{ useState } from 'react'
+import { ResourcePicker } from '@shopify/app-bridge-react';
+import React, { useState } from 'react'
 function Index() {
   const [isOpen, setIsOpen] = useState(false)
   return (
@@ -10,14 +10,14 @@ function Index() {
         onAction: () => setIsOpen(true)
       }}
     >
-      <ResourcePicker 
-      resourceType="Product" 
-      open={isOpen} 
-      onCancel={()=>isOpen(false)}
-      onSelection={(payload)=>{
-        isOpen(false)
-        console.log(payload)
-      }}/>
+      <ResourcePicker
+        resourceType="Product"
+        open={isOpen}
+        onCancel={() => setIsOpen(false)}
+        onSelection={(payload) => {
+          setIsOpen(false)
+          console.log(payload)
+        }} />
     </Page>
   )
 }
