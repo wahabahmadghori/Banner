@@ -1,15 +1,23 @@
-import { Heading, Page } from "@shopify/polaris";
+import {Page } from "@shopify/polaris";
+import {ResourcePicker} from '@shopify/app-bridge/actions';
 
+const [isOpen, setIsOpen] = useState(false)
 const Index = () => (
   <Page
     primaryAction={{
     content: 'Select Products',
-    onAction:()=>{
-      console.log('Select Products Primary Buttons Click.....')
-    }
+    onAction:()=>setIsOpen(true)
   }}
   >
-    <Heading>Welcome to shopify react app🎉</Heading>
+    <ResourcePicker 
+    resourceType="Product" 
+    open={isOpen} 
+    onCancel={()=>setIsOpen(false)}
+    onSelection={(payload)=>{
+      setIsOpen(false);
+      console.log(payload);
+    }}
+    />
   </Page>
 );
 
