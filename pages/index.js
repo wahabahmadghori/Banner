@@ -23,6 +23,11 @@ function Index() {
         open={isOpen}
         onCancel={() => setIsOpen(false)}
         onSelection={handleProductsSelection} />
+        {
+          products.map((product)=>(
+            <di>{product.title}</di>
+          ))
+        }
     </Page>
   )
 }
