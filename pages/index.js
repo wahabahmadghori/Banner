@@ -16,7 +16,7 @@ function Index() {
         onCancel={() => setIsOpen(false)}
         onSelection={(payload) => {
           setIsOpen(false)
-          console.log(payload)
+          console.log(payload.selection)
         }} />
     </Page>
   )
