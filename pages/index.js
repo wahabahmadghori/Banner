@@ -1,6 +1,8 @@
 import { Page } from "@shopify/polaris";
 import { ResourcePicker } from '@shopify/app-bridge-react';
 import React, { useState } from 'react'
+import ProductList from "../components/ProductList";
+
 
 
 function Index() {
@@ -23,11 +25,7 @@ function Index() {
         open={isOpen}
         onCancel={() => setIsOpen(false)}
         onSelection={handleProductsSelection} />
-        {
-          products.map((product)=>(
-            <di>{product.title}</di>
-          ))
-        }
+        <ProductList products={product}/>
     </Page>
   )
 }
