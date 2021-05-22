@@ -1,13 +1,13 @@
 import React from 'react'
 import {Card,ResourceList, ResourceItem,TextStyle} from '@shopify/polaris'
 
-const ProductList = ({pro}) => {
+const ProductList = ({products}) => {
     return (
         <Card>
             <ResourceList
                 showHeader
                 resourceName={{ singular: 'customer', plural: 'customers' }}
-                items={}
+                items={products}
                 renderItem={(product) => {
                     const {title} = product;
                     return (
