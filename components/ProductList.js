@@ -5,8 +5,7 @@ const ProductList = ({products}) => {
     return (
         <Card>
             <ResourceList
-                showHeader
-                resourceName={{ singular: 'customer', plural: 'customers' }}
+                resourceName={{ singular: 'Product', plural: 'Products' }}
                 items={products}
                 renderItem={(product) => {
                     const {title} = product;

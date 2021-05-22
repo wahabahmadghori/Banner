@@ -25,7 +25,8 @@ function Index() {
         open={isOpen}
         onCancel={() => setIsOpen(false)}
         onSelection={handleProductsSelection} />
-        <ProductList products={product}/>
+
+        <ProductList products={products}/>
     </Page>
   )
 }
