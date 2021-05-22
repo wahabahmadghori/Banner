@@ -5,6 +5,7 @@ const ProductList = ({products}) => {
     return (
         <Card>
             <ResourceList
+                showHeader
                 resourceName={{ singular: 'Product', plural: 'Products' }}
                 items={products}
                 renderItem={(product) => {
@@ -12,7 +13,7 @@ const ProductList = ({products}) => {
                     return (
                       <ResourceItem
                       >
-                        <h3>
+                        <h3 style={{color: "red"}}>
                           <TextStyle variation="strong">{title}</TextStyle>
                         </h3>
                       </ResourceItem>
