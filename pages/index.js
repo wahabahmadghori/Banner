@@ -15,7 +15,7 @@ function Index() {
   }
   return (
     <>
-      {products.lenght > 0 ?
+      {products.length > 0 ?
         <Page
           primaryAction={{
             content: 'Select Products',
