@@ -27,7 +27,7 @@ function Index() {
             onAction: () => setIsOpen(true)
           }}
         >
-          
+          <ProductList products={products} />
           
         </Page>
         :
