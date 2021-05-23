@@ -23,7 +23,7 @@ function Index() {
       {products.length > 0 ?
         <Page
           primaryAction={{
-            content: 'Add Products',
+            content: 'Select Products',
             onAction: () => setIsOpen(true)
           }}
         >
@@ -33,9 +33,9 @@ function Index() {
         :
         <Card sectioned>
           <EmptyState
-            heading="Add Products for UpSell"
+            heading="Add your Products for promotion"
             action={{ 
-              content: 'My Select Products ',
+              content: 'Add Product',
               onAction:()=>setIsOpen(true)
            }}
             image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
