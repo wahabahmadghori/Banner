@@ -10,6 +10,7 @@ const ProductList = ({ products }) => {
         resourceName={{ singular: 'Product', plural: 'Products' }}
         items={products}
         renderItem={(product) => {
+          console.log(product)
           return (
             <ProductItem product={product}/>
           );
