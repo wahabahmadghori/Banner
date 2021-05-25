@@ -1,5 +1,6 @@
 import React from 'react'
-import { Page} from "@shopify/polaris";
+import {Page} from "@shopify/polaris";
+import ProductList from "../components/ProductList";
 
 const ProductPage = ({ setIsOpen, products }) => {
     return (
