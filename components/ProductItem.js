@@ -5,7 +5,7 @@ import {
 } from '@shopify/polaris-icons';
 const ProductItem = ({product}) => {
     const { title } = product;
-    const image = product.images[0]?products.images[0].originalSrc:SmileyHappyMajor
+    const image = product.images[0]?product.images[0].originalSrc:SmileyHappyMajor
           return (
             <ResourceItem
             >
