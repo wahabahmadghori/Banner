@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResourceItem, TextStyle } from '@shopify/polaris'
+import { ResourceItem, TextStyle ,Thumbnail } from '@shopify/polaris'
 import {
   SmileyHappyMajor
 } from '@shopify/polaris-icons';
