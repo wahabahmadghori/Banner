@@ -1,6 +1,6 @@
 import { Page, Card, EmptyState } from "@shopify/polaris";
 import { ResourcePicker } from '@shopify/app-bridge-react';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import ProductList from "../components/ProductList";
 
 
