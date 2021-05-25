@@ -10,9 +10,7 @@ const ProductItem = ({product}) => {
             <ResourceItem
             >
               <Thumbnail source={image} alt={title}/>
-              <h3>
                 <TextStyle variation="strong">{title}</TextStyle>
-              </h3>
             </ResourceItem>
           );
 }
