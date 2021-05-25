@@ -3,7 +3,6 @@ import { Card, ResourceList, ResourceItem, TextStyle } from '@shopify/polaris'
 import ProductItem from '../components/ProductItem'
 
 const ProductList = ({ products }) => {
-  console.log(products)
   return (
     <Card>
       <ResourceList
