@@ -11,7 +11,9 @@ function Index() {
   const [productIds, setProductIds] = useState([])
   useEffect(() => {
     const ids = products.map((product)=>{
-      return product.id
+      return {
+        id:product.id
+      }
     })
     setProductIds(ids)
   }, [products])
