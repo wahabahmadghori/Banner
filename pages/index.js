@@ -8,6 +8,13 @@ import ProductList from "../components/ProductList";
 function Index() {
   const [isOpen, setIsOpen] = useState(false)
   const [products, setProducts] = useState([])
+  const [productIds, setProductIds] = useState([])
+  useEffect(() => {
+    const ids = products.map((product)=>{
+      return product.id
+    })
+    setProductIds(ids)
+  }, [products])
   function handleProductsSelection(payload) {
     setIsOpen(false)
     setProducts(payload.selection)
@@ -19,7 +26,8 @@ function Index() {
             resourceType="Product"
             open={isOpen}
             onCancel={() => setIsOpen(false)}
-            onSelection={handleProductsSelection} />
+            onSelection={handleProductsSelection}
+            initialSelectionIds={productIds} />
       {products.length > 0 ?
         <Page
           primaryAction={{
