@@ -2,7 +2,7 @@ import { ResourcePicker } from '@shopify/app-bridge-react';
 import React, { useState,useEffect } from 'react'
 import ProductEmptyState from '../components/ProductEmptyState';
 import ProductPage from "../components/ProductPage";
-import store from require('store')
+import store from 'store-js'
 function Index({shopOrigin}) {
   const [isOpen, setIsOpen] = useState(false)
   const [products, setProducts] = useState([])
