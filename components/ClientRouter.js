@@ -7,4 +7,4 @@ const ClientRouter = (props) => {
     return <AppBridgeClientRouter history={router}/>
 }
 
-export default withRouter(AppBridgeClientRouter)
+export default withRouter(ClientRouter)
