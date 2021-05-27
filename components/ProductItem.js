@@ -8,6 +8,7 @@ const ProductItem = ({ product }) => {
   const image = product.images[0] ? product.images[0].originalSrc : SmileyHappyMajor
   const media = <Thumbnail source={image} alt={title} />
   const price = product.variants[0].price 
+  
   return (
     <ResourceItem
     media={media}
