@@ -9,7 +9,7 @@ function Index({shopOrigin}) {
   const [productIds, setProductIds] = useState([])
 
   useEffect(() => {
-    const productList = store.get(`${shopOrigin}-products`)
+    const productList = store.get(`products`)
     if(productList){
       setProducts(productList)
     }
