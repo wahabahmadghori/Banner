@@ -16,23 +16,26 @@ const app = next({
   dev,
 });
 const handle = app.getRequestHandler();
-
-function storeCallback(session){
+const FILENAME = './session.json'
+function storeCallback(session) {
   console.log('storeCallback')
-  fs.writeFileSync("./session.json", JSON.stringify(session))
+  fs.writeFileSync(FILENAME, JSON.stringify(session))
   return true
 }
-function loadCallback(id){
+function loadCallback(id) {
   console.log('loadCallback', id)
-  const sessionResult = fs.readFileSync('./session.json', 'utf-8')
-  return Object.assign(
-    new Session,
-    JSON.parse(sessionResult)
-  )
-  
+  if (fs.existsSync(FILENAME)) {
+    const sessionResult = fs.readFileSync(FILENAME, 'utf-8')
+    return Object.assign(
+      new Session,
+      JSON.parse(sessionResult)
+    )
+  }
+  return false
+
 }
-function deleteCallback(id){
-  console.log('deleteCallback',id)
+function deleteCallback(id) {
+  console.log('deleteCallback', id)
 }
 
 const sessionStorage = new Shopify.Session.CustomSessionStorage(
@@ -55,6 +58,12 @@ Shopify.Context.initialize({
 // Storing the currently active shops in memory will force them to re-login when your server restarts. You should
 // persist this object in your app.
 const ACTIVE_SHOPIFY_SHOPS = {};
+
+const session = loadCallback()
+if (session?.shop && session?.scope) {
+  console.log('session', session)
+  ACTIVE_SHOPIFY_SHOPS[session.scope] = session.scope;
+}
 
 app.prepare().then(async () => {
   const server = new Koa();
