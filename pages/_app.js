@@ -54,7 +54,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, shopOrigin } = this.props;
     return (
-      <AppProvider i18n={translations} shopOrigin={shopOrigin}>
+      <AppProvider i18n={translations}>
         <Provider
           config={{
             apiKey: API_KEY,
@@ -62,8 +62,10 @@ class MyApp extends App {
             forceRedirect: true,
           }}
         >
+          
+          <MyProvider Component={Component} {...pageProps} shopOrigin={shopOrigin}>
           <AppClientRouter/>
-          <MyProvider Component={Component} {...pageProps} shopOrigin={shopOrigin}/>
+            </MyProvider>
         </Provider>
       </AppProvider>
     );
