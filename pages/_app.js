@@ -62,8 +62,9 @@ class MyApp extends App {
             forceRedirect: true,
           }}
         >
-          <AppClientRouter Component={Component} {...pageProps} shopOrigin={shopOrigin}/>
+          <AppClientRouter>
           <MyProvider Component={Component} {...pageProps} shopOrigin={shopOrigin}/>
+          </AppClientRouter>
         </Provider>
       </AppProvider>
     );
