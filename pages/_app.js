@@ -54,7 +54,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, shopOrigin } = this.props;
     return (
-      <AppProvider i18n={translations}>
+      <AppProvider i18n={translations} shopOrigin={shopOrigin}>
         <Provider
           config={{
             apiKey: API_KEY,
