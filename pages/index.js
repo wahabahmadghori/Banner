@@ -25,7 +25,7 @@ function Index({shopOrigin}) {
   function handleProductsSelection(payload) {
     setIsOpen(false)
     setProducts(payload.selection)
-    store.set(`${shopOrigin}-products`, payload.selection)
+    store.set(`products`, payload.selection)
   }
   return (
     <>
