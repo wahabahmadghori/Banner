@@ -7,9 +7,9 @@ function Index({shopOrigin}) {
   const [isOpen, setIsOpen] = useState(false)
   const [products, setProducts] = useState([])
   const [productIds, setProductIds] = useState([])
-
+  const ishopOrigin = shopOrigin
   useEffect(() => {
-    const productList = store.get(`${shopOrigin}-products`)
+    const productList = store.get(`${ishopOrigin}-products`)
     if(productList){
       setProducts(productList)
     }
@@ -26,7 +26,7 @@ function Index({shopOrigin}) {
   function handleProductsSelection(payload) {
     setIsOpen(false)
     setProducts(payload.selection)
-    store.set(`${shopOrigin}-products`, payload.selection)
+    store.set(`${ishopOrigin}-products`, payload.selection)
   }
   return (
     <>
