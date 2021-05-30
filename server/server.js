@@ -6,6 +6,8 @@ import Shopify, { ApiVersion } from "@shopify/shopify-api";
 import Koa from "koa";
 import next from "next";
 import Router from "koa-router";
+import fs from 'fs'
+import { Session } from "inspector";
 
 dotenv.config();
 const port = parseInt(process.env.PORT, 10) || 8081;
@@ -16,11 +18,18 @@ const app = next({
 const handle = app.getRequestHandler();
 
 function storeCallback(session){
-  console.log('storeCallback: ',session)
+  console.log('storeCallback')
+  fs.writeFileSync("./session.json", JSON.stringify(session))
   return true
 }
 function loadCallback(id){
   console.log('loadCallback', id)
+  const sessionResult = fs.readFileSync('./session.json', 'utf-8')
+  return Object.assign(
+    new Session,
+    JSON.parse(sessionResult)
+  )
+  
 }
 function deleteCallback(id){
   console.log('deleteCallback',id)
