@@ -9,7 +9,7 @@ function Index({shopOrigin}) {
   const [productIds, setProductIds] = useState([])
 
   useEffect(() => {
-    const productList = store.get(`products`)
+    const productList = store.get(`${shopOrigin}-products`)
     if(productList){
       setProducts(productList)
     }
@@ -25,7 +25,7 @@ function Index({shopOrigin}) {
   function handleProductsSelection(payload) {
     setIsOpen(false)
     setProducts(payload.selection)
-    store.set(`products`, payload.selection)
+    store.set(`${shopOrigin}-products`, payload.selection)
   }
   return (
     <>
