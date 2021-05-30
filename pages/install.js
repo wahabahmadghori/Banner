@@ -1,8 +1,7 @@
 import React from 'react'
 import {Page} from '@shopify/polaris'
 
-const Install = ({shopOrigin}) => {
-    console.log(shopOrigin)
+const Install = () => {
     return (
         <Page>
             Install Script
