@@ -15,6 +15,7 @@ function Index({shopOrigin}) {
     }
   }, [])
   useEffect(() => {
+    console.log(shopOrigin)
     const ids = products.map((product)=>{
       return {
         id:product.id
