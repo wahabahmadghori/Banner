@@ -1,7 +1,7 @@
 import React from 'react'
 import {Page} from '@shopify/polaris'
 
-const install = ({shopOrigin}) => {
+const Install = ({shopOrigin}) => {
     console.log(shopOrigin)
     return (
         <Page>
@@ -10,4 +10,4 @@ const install = ({shopOrigin}) => {
     )
 }
 
-export default install
+export default Install
