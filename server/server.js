@@ -61,7 +61,6 @@ const ACTIVE_SHOPIFY_SHOPS = {};
 
 const session = loadCallback()
 if (session?.shop && session?.scope) {
-  console.log('session', session)
   ACTIVE_SHOPIFY_SHOPS[session.scope] = session.scope;
 }
 
